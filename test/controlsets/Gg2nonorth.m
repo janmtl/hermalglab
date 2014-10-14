@@ -1,21 +1,11 @@
-% generate_RESULTS.m
+% test/controlsets/Gg2nonorth.m
 %
 % Jan Florjanczyk, 2014
 %
-% Inputs: F       = the set of matrices generating the Jordan algebra
-%         MIN     = Starting value for P0 grid search
-%         MAX     = Stopping value for P0 grid search
-%         SPACING = Spacing of P0 ndgrid
-%         tol     = tolerance for pinv
-%
-% Outputs: RESULTS = array of structs with START, PATH, and TIME matrices
-%          N       = size of the tensors
-%          n       = dimension of the Jordan algebra
-
-function [RESULT] = generate_ONEPATH(START, tol)
-  
-  ode_options  = odeset('RelTol', tol);
-
+% The algebra tensors for the control set
+% of projectors onto two non-orthogonal 
+% states of overlap <1|2> = a
+function [G, g] = Gg2nonorth(a)
   G(:,:,1) =[
     2,      0,      0,      0,      0;
     0,      0,      0,      0,      0;
@@ -72,15 +62,5 @@ function [RESULT] = generate_ONEPATH(START, tol)
     0,   -1/3,      0,     -1,      0;
     0,     -1,      1,      0,      0;
     0,      0,      0,      0,      0];
-  
-  N            = 5;
-  n            = 5;
 
-  % Grid for the search
-  RESULT = struct('START', [],'PATH', [], 'TIME', []);
-
-  [T, Y] = ode45(@(t,y) iterator(t,y,G,g), [0 12], START, ode_options);
-  RESULT.START = START;
-  RESULT.PATH  = Y;
-  RESULT.TIME  = T;
 end

@@ -13,11 +13,11 @@ tol = 1e-4;
 % Let's use the test set of two non-orthogonal states
 F = F2nonorth(1/3);
 % Find the various closures
-[J, J_level] = JORDAN(F, tol);
-[L, L_level] = LIE(F, tol);
+[J, J_level] =  JORDAN(F, tol);
+[L, L_level] =     LIE(F, tol);
 [T, T_level] = TETRADS(F, tol);
-[A, A_level] = FREE(F, tol);
-FH           = HERM(A);
+[A, A_level] =    FREE(F, tol);
+FH           =    HERM(A);
 
 printf('Control set                    (F): %u-dimensional\n', size(F,3));
 printf('Jordan closure J         JORDAN(F): %u-dimensional\n', size(J,3));
