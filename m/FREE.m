@@ -5,10 +5,10 @@
 % Inputs: F = the set of matrices generating the free algebra closure
 %         varargin{1} = the tolerance for pinv
 %
-% Outputs: J = the set of matrices needed to satisfy the free algebra closure as a 3D-array
+% Outputs: A = the set of matrices needed to satisfy the free algebra closure as a 3D-array
 %          varargout{1} = the level of free algebra closures used
 
-function [R, varargout] = FREE(F, varargin)
+function [A, varargout] = FREE(F, varargin)
   d   = size(F,2);
   n   = size(F,3);
   if nargin > 1
@@ -21,7 +21,7 @@ function [R, varargout] = FREE(F, varargin)
   end
   
   for j=1:n
-    R(:,:,j) = F(:,:,j);
+    A(:,:,j) = F(:,:,j);
     h(:,j)   = reshape(F(:,:,j), d^2, 1);
   end
   
@@ -30,12 +30,12 @@ function [R, varargout] = FREE(F, varargin)
   while (advance_level == true) && (level < max_level)
     advance_level = false;
     
-    for j=1:size(R,3)
-      for k=1:size(R,3)
-        S = R(:,:,j)*R(:,:,k);
+    for j=1:size(A,3)
+      for k=1:size(A,3)
+        S = A(:,:,j)*A(:,:,k);
         s = reshape(S, d^2, 1);
         if norm(s - h*pinv(h)*s) > tol
-          R(:,:,end+1) = S;
+          A(:,:,end+1) = S;
           h(:,end+1)   = reshape(S, d^2, 1);
           if advance_level == false
             level = level + 1;
