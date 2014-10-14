@@ -11,7 +11,7 @@ clear; clc;
 tol = 1e-4;
 
 % Let's use the test set of two non-orthogonal states
-F = F2Pauli;
+F = F2nonorth(1i/3);
 
 % Cohn's reversibility theorem
 A = HERM(FREE(F,tol));

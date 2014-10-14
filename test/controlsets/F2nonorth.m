@@ -10,7 +10,7 @@
 function F = F2nonorth(a)
   I = eye(3);
   s1 = [1,0,0];
-  s2 = [a,sqrt(1-a^2),0];
+  s2 = [a,sqrt(1-conj(a)*a),0];
   F(:,:,1)     = I;
   F(:,:,end+1) = s1'*s1;
   F(:,:,end+1) = s2'*s2;
