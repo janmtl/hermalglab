@@ -30,10 +30,10 @@ function [T, varargout] = TETRADS(F, varargin)
   while (advance_level == true) && (level < max_level)
     advance_level = false;
     
-    for j=1:size(T,3)
-      for k=1:size(T,3)
-        for l=1:size(T,3)
-          for m=1:size(T,3)
+    for j=1:n-3
+      for k=j+1:n-2
+        for l=k+1:n-1
+          for m=l+1:n
 
             S = 0.5*(T(:,:,j)*T(:,:,k)*T(:,:,l)*T(:,:,m) + T(:,:,m)*T(:,:,l)*T(:,:,k)*T(:,:,j));
             s = reshape(S, d^2, 1);
