@@ -1,4 +1,4 @@
-% join.m
+% b_join.m
 %
 % Jan Florjanczyk, 2014
 %
@@ -7,7 +7,7 @@
 %
 % Outputs: C = the joined matrix basis
 
-function C = join(A, B)
+function C = b_join(A, B)
   da  = size(A,2);
   na  = size(A,3);
   nb  = size(B,3);
@@ -21,5 +21,5 @@ function C = join(A, B)
     C(:,:,j+na) = B(:,:,j);
   end
 
-  C = real_rref(C);
+  C = rref_R(C);
 end

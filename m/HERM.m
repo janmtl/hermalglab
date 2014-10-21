@@ -11,10 +11,10 @@ function H = HERM(F)
   n   = size(F,3);
 
   B = generate_herm_basis(d);
-  b = vectorize_basis(B);
-  f = vectorize_basis(F);
-  pq = real_null([b,-f]);
+  b = b_vec(B);
+  f = b_vec(F);
+  pq = null_R([b,-f]);
   h = b*pq(1:d^2,:);
-  H = unvectorize_basis(h);
-  H = real_rref(H);
+  H = b_unvec(h);
+  H = rref_r(H);
 end

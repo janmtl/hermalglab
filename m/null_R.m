@@ -1,4 +1,4 @@
-% real_null.m
+% rref_R.m
 %
 % Jan Florjanczyk, 2014
 %
@@ -6,7 +6,7 @@
 %
 % Outputs: R = the nullspace restricted to real vectors
 
-function pq = real_null(a)
+function pq = null_R(a)
   sp = [real(a);imag(a)];
   pq = null(sp);
 end

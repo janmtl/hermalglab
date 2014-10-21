@@ -2,7 +2,7 @@
 %
 % Jan Florjanczyk, 2014
 %
-% This script tests the Cohn reversibility theorem
+% This script tests the Cohn reversibile theorem
 addpath('../m');
 addpath('./controlsets');
 clear; clc;
@@ -16,4 +16,4 @@ F = F2nonorth(1i/3);
 % Cohn's reversibility theorem
 A = HERM(FREE(F,tol));
 B = join(JORDAN(F,tol), TETRADS(F,tol));
-equal_basis(A,B)
+b_eq(A,B)

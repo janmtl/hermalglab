@@ -1,4 +1,4 @@
-% real_rref.m
+% rref_R.m
 %
 % Jan Florjanczyk, 2014
 %
@@ -6,7 +6,7 @@
 %
 % Outputs: R = the reduced basis over real span coefficients
 
-function R = real_rref(A)
+function R = rref_R(A)
   d  = size(A,2);
   n  = size(A,3);
 

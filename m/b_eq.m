@@ -1,4 +1,4 @@
-% equal_basis.m
+% b_eq.m
 %
 % Jan Florjanczyk, 2014
 %
@@ -7,9 +7,9 @@
 %
 % Outputs: EQUAL = True if span(A) = span(B)
 
-function EQUAL = equal_basis(A, B)
-  a = vectorize_basis(A);
-  b = vectorize_basis(B);
+function EQUAL = b_eq(A, B)
+  a = b_vec(A);
+  b = b_vec(B);
   if rank(a) ~= rank(b)
     EQUAL = false;
   else if (rank([a';b']) == rank(a))

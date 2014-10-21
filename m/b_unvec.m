@@ -1,4 +1,4 @@
-% unvectorize_basis.m
+% b_unvec.m
 %
 % Jan Florjanczyk, 2014
 %
@@ -6,7 +6,7 @@
 %
 % Outputs: A = the matrix basis
 
-function A = unvectorize_basis(a)
+function A = b_unvec(a)
   d   = sqrt(size(a,1));
   n   = size(a,2);
 

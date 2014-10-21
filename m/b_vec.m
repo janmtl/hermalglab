@@ -1,4 +1,4 @@
-% vectorize_basis.m
+% b_vec.m
 %
 % Jan Florjanczyk, 2014
 %
@@ -6,7 +6,7 @@
 %
 % Outputs: a = the matrix of vectorized columns
 
-function a = vectorize_basis(A)
+function a = b_vec(A)
   d   = size(A,2);
   n   = size(A,3);
   for j=1:n
