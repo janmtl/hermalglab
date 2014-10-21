@@ -28,7 +28,7 @@ F(:,:,end+1) = kron(Z,Z);
 
 Cohn Reversible Theorem
 -----------------------
-Testing a theorem like the Cohn Reversible Theorem (citation needed) is easy
+Testing a theorem like the Cohn Reversible Theorem (citation needed) is easy using the `b_*` functions and the various `CLOSURE` functions.
 
 ```
 % Set the tolerance to 1e-4
