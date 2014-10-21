@@ -21,7 +21,7 @@ function IN = b_in(A, F, varargin)
   spf = [real(f);imag(f)];
   spa = [real(a);imag(a)];
 
-  if norm(pinv(spf)*spa) > tol
+  if norm(spa-spf*pinv(spf)*spa) < tol
     IN=true;
   else
     IN=false;

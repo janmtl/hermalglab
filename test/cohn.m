@@ -15,5 +15,9 @@ F = F2nonorth(1i/3);
 
 % Cohn's reversibility theorem
 A = HERM(FREE(F,tol));
-B = join(JORDAN(F,tol), TETRADS(F,tol));
-b_eq(A,B)
+B = b_join(JORDAN(F,tol), TETRADS(F,tol));
+if b_eq(A,B)
+  printf('Cohn reversibility theorem holds true for F.\n')
+else
+  printf('Cohn reversibility theorem does not hold true for F.\n')
+end

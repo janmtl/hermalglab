@@ -26,5 +26,5 @@ function B = generate_herm_basis(d)
     end
   end
 
-  B = b_join(DIAGS, join(REALS, COMPS));
+  B = b_join(DIAGS, b_join(REALS, COMPS));
 end

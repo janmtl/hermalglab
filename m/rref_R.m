@@ -10,7 +10,7 @@ function R = rref_R(A)
   d  = size(A,2);
   n  = size(A,3);
 
-  a = vectorize_basis(A);
+  a = b_vec(A);
   
     a = conj(a'); 
     sp = [real(a),imag(a)];
@@ -19,5 +19,5 @@ function R = rref_R(A)
     a = sp(:,1:d^2) + 1i*sp(:,d^2+1:2*d^2);
     a = conj(a');
 
-  R = unvectorize_basis(a);
+  R = b_unvec(a);
 end

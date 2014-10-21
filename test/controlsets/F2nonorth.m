@@ -14,5 +14,5 @@ function F = F2nonorth(a)
   F(:,:,1)     = I;
   F(:,:,end+1) = s1'*s1;
   F(:,:,end+1) = s2'*s2;
-  F(:,:,end+1) = s1'*s2 + s2'*s1;;
+  F(:,:,end+1) = s1'*s2 + s2'*s1;
 end

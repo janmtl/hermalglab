@@ -26,3 +26,16 @@ if b_in(Hadamard,F)
 else
   printf('b_in(Hadamard,{X,Z}) = False\n')
 end
+
+
+% Now, let's test |1><2|-|2><1| for membership in 2nonorth
+F  = F2nonorth(1/3);
+s1 = [1,0,0];
+s2 = [1/3,sqrt(1-conj(1/3)*1/3),0];
+H4 = s1'*s2 - s2'*s1;
+
+if b_in(H4,F)
+  printf('b_in(H4,F2nonorth) = True\n')
+else
+  printf('b_in(H4,F2nonorth) = False\n')
+end

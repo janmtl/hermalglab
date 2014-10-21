@@ -16,5 +16,5 @@ function H = HERM(F)
   pq = null_R([b,-f]);
   h = b*pq(1:d^2,:);
   H = b_unvec(h);
-  H = rref_r(H);
+  H = rref_R(H);
 end
