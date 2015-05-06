@@ -24,7 +24,7 @@ function dy = iterator(x,y,G,g)
   
   %Evolutions equations
   for j=1:n
-    da(j) = p'*(G(:,:,j)+g(:,:,j))*a;
+    da(j) = -p'*(G(:,:,j)+g(:,:,j))*a;
   end
   
   dy = [dp;da];

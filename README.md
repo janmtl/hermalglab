@@ -1,5 +1,7 @@
 HermAlgLab
 ==========
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.17401.svg)](http://dx.doi.org/10.5281/zenodo.17401)
+
 Hermitian Algebras MatLab library (HermAlgLab) is a collection of functions to test the behaviour of matrix algebras built up from Hermitian matrices. Currently, the library has support for
 - Finding the anti-commutator (Jordan) closure of a set of Hermitian matrices
 - Finding the commutator (Lie) closure of a set of Hermitian matrices
